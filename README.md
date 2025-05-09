@@ -1,18 +1,16 @@
-# [CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal
-### [Paper](https://arxiv.org/pdf/2212.04711.pdf)
+# ShadowDiffusion+ : Combining Deterministic and Stochastic Models for Image Shadow Removal
+### [CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [Paper](https://arxiv.org/pdf/2212.04711.pdf)
 
 **ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal**
 <br>_Lanqing Guo, Chong Wang, Wenhan Yang, Siyu Huang, Yufei Wang, Hanspeter Pfister, Bihan Wen_<br>
 In CVPR'2023
 
 
-#### News
-* **Aug 03, 2024**: Release the complete code, pretrained model for ISTD, ISTD+, and evaluation results. Sorry for updating late :pray:.
-* **Aug 08, 2023**: Release the pretrained model for SRD and evaluation results.
-* **Aug 05, 2023**: Release the training and testing codes.
 
 ## Introduction
-Our work addresses shadow removal by proposing a unified diffusion framework, dubbed ShadowDiffusion, that integrates both the image and degradation priors for highly effective shadow removal. ShadowDiffusion progressively refines the estimated shadow mask as an auxiliary task of the diffusion generator, which leads to more accurate and robust shadow-free image generation. For more details, please refer to our [original paper](https://arxiv.org/pdf/2212.04711.pdf).
+ShadowDiffusion addresses shadow removal by proposing a unified diffusion framework, dubbed ShadowDiffusion, that integrates both the image and degradation priors for highly effective shadow removal. ShadowDiffusion progressively refines the estimated shadow mask as an auxiliary task of the diffusion generator, which leads to more accurate and robust shadow-free image generation. For more details, please refer to our [original paper](https://arxiv.org/pdf/2212.04711.pdf).
+
+To improve both efficiency and effectiveness, we propose two key contributions: (1) integrating the Nonlinear Activation Free Network (NAFNet) as the degradation prior within the diffusion framework. This combines NAFNet’s efficient deterministic modeling with the stochastic generative capacity of diffusion models, leveraging their complementary strengths for high-quality, detail-preserving reconstructions. (2) optimizing the penalty parameter in the unrolling process, yielding improved restoration quality without additional training cost. Our improved model, ShadowDiffusion+, is evaluated on two public shadow removal datasets. On the SRD dataset, it improves PSNR from 34.73 dB to 36.01 dB and SSIM from 0.970 to 0.979, demonstrating both accuracy and efficiency.
 
 <p align=center><img width="80%" src="doc/framework.jpg"/></p>
 
@@ -30,7 +28,8 @@ pip install -r requirements.txt
 * SRD [[Training]](https://drive.google.com/file/d/1W8vBRJYDG9imMgr9I2XaA13tlFIEHOjS/view)[[Testing]](https://drive.google.com/file/d/1GTi4BmQ0SJ7diDMmf-b7x2VismmXtfTo/view)
 [[Mask]](https://uofmacau-my.sharepoint.com/personal/yb87432_um_edu_mo/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fyb87432%5Fum%5Fedu%5Fmo%2FDocuments%2Fghost%2Dfree%2Dshadow%2Dremoval%2Fsrd%5Fmask%2Ezip&parent=%2Fpersonal%2Fyb87432%5Fum%5Fedu%5Fmo%2FDocuments%2Fghost%2Dfree%2Dshadow%2Dremoval&ga=1)
  (detected by [DHAN](https://github.com/vinthony/ghost-free-shadow-removal))
-## Pretrained models
+
+## Pretrained NAFNet
 [[Link]](https://drive.google.com/file/d/12VV5HzxlIg_kCjMHsw8R9n543wYfGfAB/view?usp=sharing)
 
 Please download the corresponding pretrained model and modify the `resume_state` and `degradation_model_path` (optional) in `shadow.json`.
@@ -68,18 +67,16 @@ We use the DDIM sampling to speed up the inference stage. The number of steps ca
 "dataroot"   # training and testing set path
 "gpu_ids": [0] # Our model can be trained using a single RTX A5000 GPU. You can also train the model using multiple GPUs by adding more GPU ids in it.
 ```
-3. Train the network
+3. Train the diffsuion network
 ```python
 python sr.py -p train -c config/shadow.json
 ```
+4. Train the NAFNet network
+```python
+python train_NAFNet.py -p train -c config/shadow.json
+```
 ## Evaluation
-The results reported in the paper are calculated by the `matlab` script used in [previous method](https://github.com/zhuyr97/AAAI2022_Unfolding_Network_Shadow_Removal/tree/master/codes). Details refer to `evaluation/measure_shadow.m`.
-
-#### Testing results
-The testing results on dataset ISTD, ISTD+, SRD are: [results](https://drive.google.com/file/d/1IbA8TKIpAsxk9Vb1QHe1oIR0X-qC_gMN/view?usp=sharing)
-
-## References
-Our implementation is based on [SR3](https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement) and [WeatherDiffusion](https://github.com/IGITUGraz/WeatherDiffusion). We would like to thank them.
+The results reported in the paper are calculated by the `matlab` script used in [previous method](https://github.com/zhuyr97/AAAI2022_Unfolding_Network_Shadow_Removal/tree/master/codes). Details refer to evaluation.m.
 
 Citation
 -----
@@ -98,7 +95,4 @@ Bibtex:
   pages={14049--14058},
   year={2023}
 }
-```
 
-## Contact
-If you have any questions, please contact lanqing001@e.ntu.edu.sg 
