@@ -73,7 +73,7 @@ python train_NAFNet.py -p train -c config/shadow.json
 The results reported in the paper are calculated by the `matlab` script used in [previous method](https://github.com/zhuyr97/AAAI2022_Unfolding_Network_Shadow_Removal/tree/master/codes). Details refer to evaluation.m.
 
 
-##Reference 
+## Reference 
 
 [CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [Paper](https://arxiv.org/pdf/2212.04711.pdf)
 
