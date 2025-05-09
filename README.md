@@ -1,10 +1,4 @@
 # ShadowDiffusion+ : Combining Deterministic and Stochastic Models for Image Shadow Removal
-### [CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [Paper](https://arxiv.org/pdf/2212.04711.pdf)
-
-**ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal**
-<br>_Lanqing Guo, Chong Wang, Wenhan Yang, Siyu Huang, Yufei Wang, Hanspeter Pfister, Bihan Wen_<br>
-In CVPR'2023
-
 
 
 ## Introduction
@@ -77,6 +71,15 @@ python train_NAFNet.py -p train -c config/shadow.json
 ```
 ## Evaluation
 The results reported in the paper are calculated by the `matlab` script used in [previous method](https://github.com/zhuyr97/AAAI2022_Unfolding_Network_Shadow_Removal/tree/master/codes). Details refer to evaluation.m.
+
+
+##Reference 
+
+[CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [Paper](https://arxiv.org/pdf/2212.04711.pdf)
+
+**ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal**
+<br>_Lanqing Guo, Chong Wang, Wenhan Yang, Siyu Huang, Yufei Wang, Hanspeter Pfister, Bihan Wen_<br>
+In CVPR'2023
 
 Citation
 -----
