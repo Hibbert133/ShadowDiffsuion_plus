@@ -10,7 +10,7 @@ import core.logger as Logger
 from torchvision.utils import save_image
 from utils.losses import SSIMLoss, VGGPerceptualLoss
 import data as Data
-from model.sr3_modules import transformer,transformer2
+from model.sr3_modules import transformer
 import utils
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from warmup_scheduler import GradualWarmupScheduler
@@ -65,9 +65,6 @@ model = NAFNet(
 
 
 
-
-# criterion = nn.L1Loss()
-# optimizer = optim.Adam(model.parameters(), lr=1e-4)
 optimizer = torch.optim.AdamW(model.parameters(), lr=opt['train']['optimizer']['lr'], weight_decay=0.0, betas=(0.9, 0.999))
 
 l1_loss = nn.L1Loss()
@@ -76,13 +73,13 @@ vgg_loss = VGGPerceptualLoss()
 
 
 
-if opt['setting']['use_degradation_estimate']:
-    # model_restoration = transformer2.ShadowFormer()
-    # #print(model_restoration.win_size)
-    # model_restoration.cuda()
-    # utils.load_checkpoint(model_restoration, opt['setting']['degradation_model_path'])
-    # model_restoration.eval()
-    pass
+# if opt['setting']['use_degradation_estimate']:
+#     # model_restoration = transformer2.ShadowFormer()
+#     # #print(model_restoration.win_size)
+#     # model_restoration.cuda()
+#     # utils.load_checkpoint(model_restoration, opt['setting']['degradation_model_path'])
+#     # model_restoration.eval()
+#     pass
 
 
 
@@ -131,7 +128,7 @@ for epoch in range(num_epochs):
 
         with torch.no_grad():
             for ii, data_val in enumerate(val_loader):
-                val_input = data_val['SR'].to(device)           # ShadowFormer output
+                val_input = data_val['SR'].to(device)          
                 gt = data_val['HR'].to(device)                  # Ground truth
                 mask=data_val['mask'].to(device)
                 val_input=(val_input+1)/2
