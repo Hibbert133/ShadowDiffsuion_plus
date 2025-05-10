@@ -24,6 +24,8 @@ pip install -r requirements.txt
  (detected by [DHAN](https://github.com/vinthony/ghost-free-shadow-removal))
 
 ## Pretrained NAFNet
+[[Link]]([https://drive.google.com/file/d/12VV5HzxlIg_kCjMHsw8R9n543wYfGfAB/view?usp=sharing](https://drive.google.com/file/d/1CdERsA8x5SAbNJXFOQx0EtAjUFI33pBM/view?usp=sharing))
+## Pretrained diffsuion
 [[Link]](https://drive.google.com/file/d/12VV5HzxlIg_kCjMHsw8R9n543wYfGfAB/view?usp=sharing)
 
 Please download the corresponding pretrained model and modify the `resume_state` and `degradation_model_path` (optional) in `shadow.json`.
