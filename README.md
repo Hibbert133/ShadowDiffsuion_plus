@@ -17,7 +17,6 @@ pip install -r requirements.txt
 ```
 
 ## Datasets
-* ISTD [[link]](https://github.com/DeepInsight-PCALab/ST-CGAN)  
 * ISTD+ [[link]](https://github.com/cvlab-stonybrook/SID)
 * SRD [[Training]](https://drive.google.com/file/d/1W8vBRJYDG9imMgr9I2XaA13tlFIEHOjS/view)[[Testing]](https://drive.google.com/file/d/1GTi4BmQ0SJ7diDMmf-b7x2VismmXtfTo/view)
 [[Mask]](https://uofmacau-my.sharepoint.com/personal/yb87432_um_edu_mo/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fyb87432%5Fum%5Fedu%5Fmo%2FDocuments%2Fghost%2Dfree%2Dshadow%2Dremoval%2Fsrd%5Fmask%2Ezip&parent=%2Fpersonal%2Fyb87432%5Fum%5Fedu%5Fmo%2FDocuments%2Fghost%2Dfree%2Dshadow%2Dremoval&ga=1)
@@ -83,21 +82,5 @@ The results reported in the paper are calculated by the `matlab` script used in 
 <br>_Lanqing Guo, Chong Wang, Wenhan Yang, Siyu Huang, Yufei Wang, Hanspeter Pfister, Bihan Wen_<br>
 In CVPR'2023
 
-Citation
------
-Preprint available [here](https://arxiv.org/pdf/2212.04711.pdf). 
 
-In case of use, please cite our publication:
-
-L. Guo, C. Wang, W. Yang, S. Huang, Y. Wang, P. Hanspeter, and B. Wen, "Shadowdiffusion: When degradation prior meets diffusion model for shadow removal," CVPR 2023.
-
-Bibtex:
-```
-@inproceedings{guo2023shadowdiffusion,
-  title={Shadowdiffusion: When degradation prior meets diffusion model for shadow removal},
-  author={Guo, Lanqing and Wang, Chong and Yang, Wenhan and Huang, Siyu and Wang, Yufei and Pfister, Hanspeter and Wen, Bihan},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={14049--14058},
-  year={2023}
-}
 
