@@ -1,15 +1,15 @@
-%% compute RMSE(MAE)|����RMSE(MAE) 
+%% compute RMSE(MAE)|RMSE(MAE) 
 clear;close all;clc
-% 1`modify the following directories 2`run|�޸�·��,������
+% 1`modify the following directories 2`run
 
-% GT mask directory|��Ĥ·��
+% GT mask directory|
 maskdir = '/Users/Hibbert/Desktop/srd3/results/';
 MD = dir([maskdir '/*_inf.png']);
 
 % maskdir = '/Users/Hibbert/Desktop/srd3/results';
 %MD = dir([maskdir '/*_inf.png']);
 
-% result directory|���·��
+% result directory|
 shadowdir = '//Users/Hibbert/Desktop/srd_sh2/results/';  
 %%shadowdir = '/Users/Hibbert/Desktop/SD-results/ISTD+/results/'; 
 %SD = dir([shadowdir '/*.png']);

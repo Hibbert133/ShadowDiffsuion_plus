@@ -6,7 +6,11 @@ ShadowDiffusion addresses shadow removal by proposing a unified diffusion framew
 
 To improve both efficiency and effectiveness, we propose two key contributions: (1) integrating the Nonlinear Activation Free Network (NAFNet) as the degradation prior within the diffusion framework. This combines NAFNet’s efficient deterministic modeling with the stochastic generative capacity of diffusion models, leveraging their complementary strengths for high-quality, detail-preserving reconstructions. (2) optimizing the penalty parameter in the unrolling process, yielding improved restoration quality without additional training cost. Our improved model, ShadowDiffusion+, is evaluated on two public shadow removal datasets. On the SRD dataset, it improves PSNR from 34.73 dB to 36.01 dB and SSIM from 0.970 to 0.979, demonstrating both accuracy and efficiency.
 
+ShadowDiffusion framework:
 <p align=center><img width="80%" src="doc/framework.jpg"/></p>
+NAFNet framework as estimtetion network:
+<p align=center><img width="80%" src="doc/framework_2.png"/></p>
+
 
 ## Requirement
 
@@ -94,6 +98,13 @@ python train_NAFNet.py -p train -c config/shadow.json --dataset SRD
 
 The results reported in the paper are calculated by the `matlab` script used in [previous method](https://github.com/zhuyr97/AAAI2022_Unfolding_Network_Shadow_Removal/tree/master/codes). Details refer to evaluation.m.
 
+## Results
+<p align=center><img width="80%" src="doc/results.png"/></p>
+
+## Visual results
+<p align=center><img width="80%" src="doc/visual_results.png"/></p>
+
+
 ## Reference
 
 [CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [Paper](https://arxiv.org/pdf/2212.04711.pdf)
@@ -101,3 +112,6 @@ The results reported in the paper are calculated by the `matlab` script used in 
 **ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal**
 <br>_Lanqing Guo, Chong Wang, Wenhan Yang, Siyu Huang, Yufei Wang, Hanspeter Pfister, Bihan Wen_<br>
 In CVPR'2023
+
+## Citation
+Hongjun Sheng, Lanqing Guo, Xinggan Peng, Zhiping Lin and Bihan Wen, An improved method for Image Shadow Removal by Combining Deterministic and Stochastic Models, Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC) 2025. [Link](https://ieeexplore.ieee.org/document/11249409)
