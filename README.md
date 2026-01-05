@@ -114,4 +114,4 @@ The results reported in the paper are calculated by the `matlab` script used in 
 In CVPR'2023
 
 ## Citation
-Hongjun Sheng,&nbsp;Lanqing Guo,&nbsp;Xinggan Peng,&nbsp;Zhiping Lin and&nbsp;Bihan Wen,  "An improved method for Image Shadow Removal by Combining Deterministic and Stochastic Models",  Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC) 2025.  [[Link]](https://ieeexplore.ieee.org/document/11249409)
+Hongjun Sheng, Lanqing Guo, Xinggan Peng, Zhiping Lin and Bihan Wen,  "An improved method for Image Shadow Removal by Combining Deterministic and Stochastic Models",  Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC) 2025.  [[Link]](https://ieeexplore.ieee.org/document/11249409)
