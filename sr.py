@@ -22,6 +22,7 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--phase', type=str, choices=['train', 'val'],
                         help='Run either train(training) or val(generation)', default='train')
     parser.add_argument('-gpu', '--gpu_ids', type=str, default=None)
+    parser.add_argument('-dataset', '--dataset', type=str, default="SRD")
     parser.add_argument('-debug', '-d', action='store_true')
     parser.add_argument('-enable_wandb', action='store_true')
     parser.add_argument('-log_wandb_ckpt', action='store_true')
@@ -84,14 +85,14 @@ if __name__ == "__main__":
         # model_restoration.eval()
 
         ################  SRD   #####################
-        
-        # model_restoration = NAFNet(
-        # img_channel=4,
-        # width=48,
-        # middle_blk_num=2,
-        # enc_blk_nums=[2, 2, 2, 8],
-        # dec_blk_nums=[2, 2, 2, 2]
-        # ).cuda()
+        if (args.dataset == "SRD"):
+            model_restoration = NAFNet(
+            img_channel=4,
+            width=48,
+            middle_blk_num=2,
+            enc_blk_nums=[2, 2, 2, 8],
+            dec_blk_nums=[2, 2, 2, 2]
+            ).cuda()
 
         # model_restoration = NAFNet(
         # img_channel=4,
@@ -102,14 +103,14 @@ if __name__ == "__main__":
         # ).cuda()
 
         ################  ISTDPlus   #####################
-
-        model_restoration = NAFNet(
-            img_channel=4,
-            width=64,
-            enc_blk_nums=[2, 2, 4, 8],
-            middle_blk_num=12,
-            dec_blk_nums=[2, 2, 2, 2]
-        ).cuda()
+        if (args.dataset == "SRD"):
+            model_restoration = NAFNet(
+                img_channel=4,
+                width=64,
+                enc_blk_nums=[2, 2, 4, 8],
+                middle_blk_num=12,
+                dec_blk_nums=[2, 2, 2, 2]
+            ).cuda()
 
 
         utils.load_checkpoint(model_restoration, opt['setting']['degradation_model_path'])
