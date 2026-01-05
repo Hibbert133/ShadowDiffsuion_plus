@@ -1,4 +1,4 @@
-# ShadowDiffusion+ : Combining Deterministic and Stochastic Models for Image Shadow Removal
+# [PSIPA ASC 2025] An improved method for Image Shadow Removal by Combining Deterministic and Stochastic Models
 
 ## Introduction
 
@@ -107,11 +107,11 @@ The results reported in the paper are calculated by the `matlab` script used in 
 
 ## Reference
 
-[CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [Paper](https://arxiv.org/pdf/2212.04711.pdf)
+[CVPR 2023] ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal [[Paper]](https://arxiv.org/pdf/2212.04711.pdf)
 
 **ShadowDiffusion: When Degradation Prior Meets Diffusion Model for Shadow Removal**
 <br>_Lanqing Guo, Chong Wang, Wenhan Yang, Siyu Huang, Yufei Wang, Hanspeter Pfister, Bihan Wen_<br>
 In CVPR'2023
 
 ## Citation
-Hongjun Sheng, Lanqing Guo, Xinggan Peng, Zhiping Lin and Bihan Wen, An improved method for Image Shadow Removal by Combining Deterministic and Stochastic Models, Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC) 2025. [Link](https://ieeexplore.ieee.org/document/11249409)
+Hongjun Sheng, Lanqing Guo, Xinggan Peng, Zhiping Lin and Bihan Wen, "An improved method for Image Shadow Removal by Combining Deterministic and Stochastic Models", Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC) 2025. [[Link]](https://ieeexplore.ieee.org/document/11249409)
